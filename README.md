@@ -1,1 +1,1 @@
-# Projeto de LAB para subir um site HTML básico na AWS usando Docker, NGINX, ECR e EC2.
+# Projeto de deploy de aplicação HTML estática utilizando Docker, Nginx e AWS EC2 com armazenamento da imagem no Amazon ECR.
