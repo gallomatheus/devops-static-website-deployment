@@ -1,2 +1,1 @@
-# devops-static-website-deployment
-Construindo uma pipeline de deploy cloud containerizada
+# Projeto de LAB para subir um site HTML básico na AWS usando Docker, NGINX, ECR e EC2.
