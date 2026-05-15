@@ -367,7 +367,7 @@ Adicione as seguintes regras:
 - **Volume**: 8 GiB gp3 (padrão)
 
 
-<img width="1847" height="1166" alt="image" src="https://github.com/user-attachments/assets/69c8483e-89d4-4b52-b93c-7c8201ee08fa" />
+<img width="1847" height="1168" alt="image" src="https://github.com/user-attachments/assets/6497400b-1f99-4403-a585-9e4b6c1db9b5" />
 
 
 
