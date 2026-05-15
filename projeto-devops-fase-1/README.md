@@ -375,18 +375,26 @@ Adicione as seguintes regras:
 ### Passo 6.3: Configurar IAM Role (Permissões para ECR)
 
 #### Criar IAM Role
-1. Em "Advanced details", encontre "IAM instance profile"
-2. Clique em "Create new IAM profile"
-3. Ou vá para IAM Console e:
+1. Procure por IAM na busca
+2. Clique em "Roles" > "New Role"
+3. Selecione os campos: "AWS Service" e Service: "EC2"
+4. Ou vá para IAM Console e:
    - Clique em "Roles" → "Create role"
    - **Trusted entity**: AWS service
    - **Use case**: EC2
    - **Permissions**: Adicione `AmazonEC2ContainerRegistryReadOnly`
-   - **Role name**: `EC2-ECR-Role`
+   - **Role name**: `ECR-EC2-Role`
+
+<img width="1849" height="1158" alt="image" src="https://github.com/user-attachments/assets/496edc3c-391f-4569-8cb7-a2feb23c2862" />
+
 
 
 
 4. Volte para a configuração da EC2 e selecione o role criado
+
+<img width="1077" height="948" alt="image" src="https://github.com/user-attachments/assets/15da4ee7-b162-41ca-9244-0ea811dc0c1c" />
+
+
 
 ### Passo 6.4: Revisar e lançar
 
@@ -474,11 +482,16 @@ exit
 ssh -i meu-website-key.pem ec2-user@54.123.45.67
 ```
 
+<img width="744" height="98" alt="image" src="https://github.com/user-attachments/assets/112335b9-8008-4177-aaab-5f19c2ca8c56" />
+
+
 ### Passo 7.4: Autenticar Docker com ECR na EC2
 
 ```bash
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123456789012.dkr.ecr.us-east-1.amazonaws.com
 ```
+
+<img width="1716" height="192" alt="image" src="https://github.com/user-attachments/assets/4e69d2ea-5895-4ef6-abb7-396e59a2112d" />
 
 
 
@@ -493,6 +506,9 @@ Você verá:
 v1.0: Pulling from meu-website
 Status: Downloaded newer image for 123456789012.dkr.ecr.us-east-1.amazonaws.com/meu-website:v1.0
 ```
+
+<img width="1158" height="400" alt="image" src="https://github.com/user-attachments/assets/0d4e3921-34cb-41e0-934a-dd8c5670388b" />
+
 
 
 ### Passo 7.6: Executar o container
@@ -515,6 +531,7 @@ docker ps
 docker logs meu-website-prod
 ```
 
+<img width="1756" height="156" alt="image" src="https://github.com/user-attachments/assets/46b60e7a-dcee-464b-8f4a-4d78ee59d61f" />
 
 
 ---
@@ -526,6 +543,9 @@ docker logs meu-website-prod
 1. Abra seu navegador
 2. Digite o IP público da EC2: `http://54.123.45.67`
 3. Seu website deve aparecer! 🎉
+
+
+<img width="1854" height="1201" alt="image" src="https://github.com/user-attachments/assets/ce7da0c0-929e-4873-962c-bf97ab6c38a4" />
 
 
 
