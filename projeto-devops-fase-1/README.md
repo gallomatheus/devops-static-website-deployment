@@ -42,9 +42,9 @@ xdg-open website/index.html
 start website/index.html
 ```
 
-*[Espaço para print: Website funcionando no navegador]*
 
----
+
+
 
 ## 🐳 Fase 2: Containerização com Docker
 
