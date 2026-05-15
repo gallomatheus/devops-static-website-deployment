@@ -3,17 +3,16 @@
 ## 📋 Índice
 1. [Visão Geral](#visão-geral)
 2. [Pré-requisitos](#pré-requisitos)
-3. [Arquitetura do Projeto](#arquitetura-do-projeto)
-4. [Fase 1: Preparação do Ambiente Local](#fase-1-preparação-do-ambiente-local)
-5. [Fase 2: Containerização com Docker](#fase-2-containerização-com-docker)
-6. [Fase 3: Teste Local do Container](#fase-3-teste-local-do-container)
-7. [Fase 4: Configuração do Amazon ECR](#fase-4-configuração-do-amazon-ecr)
-8. [Fase 5: Push da Imagem para o ECR](#fase-5-push-da-imagem-para-o-ecr)
-9. [Fase 6: Provisionamento da Instância EC2](#fase-6-provisionamento-da-instância-ec2)
-10. [Fase 7: Deploy na EC2](#fase-7-deploy-na-ec2)
-11. [Verificação e Testes](#verificação-e-testes)
-12. [Troubleshooting](#troubleshooting)
-13. [Limpeza de Recursos](#limpeza-de-recursos)
+3. [Fase 1: Preparação do Ambiente Local](#fase-1-preparação-do-ambiente-local)
+4. [Fase 2: Containerização com Docker](#fase-2-containerização-com-docker)
+5. [Fase 3: Teste Local do Container](#fase-3-teste-local-do-container)
+6. [Fase 4: Configuração do Amazon ECR](#fase-4-configuração-do-amazon-ecr)
+7. [Fase 5: Push da Imagem para o ECR](#fase-5-push-da-imagem-para-o-ecr)
+8. [Fase 6: Provisionamento da Instância EC2](#fase-6-provisionamento-da-instância-ec2)
+9. [Fase 7: Deploy na EC2](#fase-7-deploy-na-ec2)
+10. [Verificação e Testes](#verificação-e-testes)
+11. [Troubleshooting](#troubleshooting)
+12. [Limpeza de Recursos](#limpeza-de-recursos)
 
 ---
 
@@ -30,75 +29,6 @@ Neste laboratório, você aprenderá a containerizar um website estático (HTML,
 
 ### Tempo estimado: 2-3 horas
 
----
-
-## 🔧 Pré-requisitos
-
-### Ferramentas Necessárias
-
-#### 1. **Docker Desktop**
-- **Windows/Mac**: Baixe em [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-- **Linux**: Instale via terminal:
-```bash
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-```
-
-Para verificar a instalação:
-```bash
-docker --version
-```
-
-*[Espaço para print: Resultado do comando docker --version]*
-
-#### 2. **AWS CLI**
-Instale seguindo a [documentação oficial](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-
-Para verificar:
-```bash
-aws --version
-```
-
-*[Espaço para print: Resultado do comando aws --version]*
-
-#### 3. **Conta AWS**
-- Crie uma conta gratuita em [aws.amazon.com](https://aws.amazon.com)
-- ⚠️ **Importante**: Alguns recursos podem gerar custos. Use o Free Tier quando possível
-
-#### 4. **Editor de Código**
-- Recomendado: [Visual Studio Code](https://code.visualstudio.com/)
-- Extensões úteis: Docker, AWS Toolkit
-
-### Estrutura do Projeto
-```
-meu-projeto/
-├── website/
-│   ├── index.html
-│   ├── styles.css
-│   ├── script.js
-│   └── assets/
-│       └── (imagens, fontes, etc.)
-└── Dockerfile (vamos criar)
-```
-
----
-
-## 🏗️ Arquitetura do Projeto
-
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│  Código Local   │────▶│   Docker Image  │────▶│    Amazon ECR   │
-│  (HTML/CSS/JS)  │     │   (Container)   │     │   (Registry)    │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-                                                          │
-                                                          ▼
-                        ┌─────────────────┐     ┌─────────────────┐
-                        │    Browser      │◀────│    Amazon EC2   │
-                        │  (User Access)  │     │   (Container)   │
-                        └─────────────────┘     └─────────────────┘
-```
-
----
 
 ## 📦 Fase 1: Preparação do Ambiente Local
 
@@ -741,20 +671,3 @@ Após completar este laboratório, você está pronto para:
 - [Best Practices for Dockerfile](https://docs.docker.com/develop/dev-best-practices/)
 
 ---
-
-## 📝 Notas
-
-Use este espaço para suas anotações pessoais:
-
-```
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
-```
-
----
-
-**Parabéns! 🎉** Você completou o laboratório de containerização e deploy manual na AWS!
-
-Desenvolvido com ❤️ para a jornada DevOps
