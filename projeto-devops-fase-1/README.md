@@ -201,14 +201,13 @@ docker rm meu-website-container
 1. Acesse [console.aws.amazon.com](https://console.aws.amazon.com)
 2. Faça login com suas credenciais
 
-*[Espaço para print: Console AWS]*
+
 
 ### Passo 4.2: Navegar para o ECR
 
 1. Na barra de busca superior, digite "ECR"
 2. Clique em "Elastic Container Registry"
 
-*[Espaço para print: Busca pelo ECR]*
 
 ### Passo 4.3: Criar um repositório
 
@@ -220,7 +219,6 @@ docker rm meu-website-container
    - **Scan on push**: Enabled (recomendado para segurança)
 3. Clique em "Create repository"
 
-*[Espaço para print: Formulário de criação do repositório]*
 
 ### Passo 4.4: Anotar a URI do repositório
 
@@ -231,7 +229,10 @@ Após criar, você verá algo como:
 
 ⚠️ **Importante**: Copie e guarde esta URI, você precisará dela!
 
-*[Espaço para print: Repositório criado com a URI visível]*
+
+<img width="1855" height="1164" alt="image" src="https://github.com/user-attachments/assets/cfd87f39-2ee6-4918-9af3-694e5ccb3808" />
+
+
 
 ---
 
@@ -265,7 +266,9 @@ Você deve ver:
 Login Succeeded
 ```
 
-*[Espaço para print: Login bem-sucedido no ECR]*
+<img width="1775" height="207" alt="image" src="https://github.com/user-attachments/assets/1b9200e5-dd94-4709-b922-08e3648b4890" />
+
+
 
 ### Passo 5.3: Tagar a imagem para o ECR
 
@@ -287,7 +290,9 @@ def456: Pushed
 v1.0: digest: sha256:xyz789... size: 1234
 ```
 
-*[Espaço para print: Push concluído]*
+<img width="1343" height="455" alt="image" src="https://github.com/user-attachments/assets/7a505e0b-4505-4267-b50c-8f4ecb6c3cc6" />
+
+
 
 ### Passo 5.5: Verificar no Console AWS
 
@@ -295,7 +300,10 @@ v1.0: digest: sha256:xyz789... size: 1234
 2. Clique no seu repositório
 3. Você deve ver a imagem com a tag v1.0
 
-*[Espaço para print: Imagem no ECR]*
+<img width="1848" height="651" alt="image" src="https://github.com/user-attachments/assets/26659cbc-dcd0-41a6-8beb-ab8b36016898" />
+
+
+
 
 ---
 
@@ -317,12 +325,12 @@ v1.0: digest: sha256:xyz789... size: 1234
 #### Imagem de aplicação e sistema operacional
 - **AMI**: Amazon Linux 2023 (Free tier eligible)
 
-*[Espaço para print: Seleção da AMI]*
+
 
 #### Tipo de instância
 - **Instance type**: t2.micro (Free tier eligible)
 
-*[Espaço para print: Seleção do tipo de instância]*
+
 
 #### Par de chaves
 - Clique em "Create new key pair"
@@ -330,10 +338,12 @@ v1.0: digest: sha256:xyz789... size: 1234
 - **Key pair type**: RSA
 - **Private key file format**: .pem (Linux/Mac) ou .ppk (Windows/PuTTY)
 - Clique em "Create key pair" e salve o arquivo
+- Após isso alterar as permissões da chave para "chmod 400" para conseguir conectar via ssh na ec2
+
 
 ⚠️ **IMPORTANTE**: Guarde este arquivo com segurança! Você precisará dele para acessar a EC2.
 
-*[Espaço para print: Criação do key pair]*
+
 
 #### Configurações de rede
 - **VPC**: Default
@@ -351,10 +361,16 @@ Adicione as seguintes regras:
 | SSH  | TCP      | 22         | My IP  |
 | HTTP | TCP      | 80         | 0.0.0.0/0 |
 
-*[Espaço para print: Configuração do Security Group]*
+
 
 #### Configurar armazenamento
 - **Volume**: 8 GiB gp3 (padrão)
+
+
+<img width="1847" height="1166" alt="image" src="https://github.com/user-attachments/assets/69c8483e-89d4-4b52-b93c-7c8201ee08fa" />
+
+
+
 
 ### Passo 6.3: Configurar IAM Role (Permissões para ECR)
 
@@ -368,7 +384,7 @@ Adicione as seguintes regras:
    - **Permissions**: Adicione `AmazonEC2ContainerRegistryReadOnly`
    - **Role name**: `EC2-ECR-Role`
 
-*[Espaço para print: Criação do IAM Role]*
+
 
 4. Volte para a configuração da EC2 e selecione o role criado
 
@@ -378,7 +394,7 @@ Adicione as seguintes regras:
 2. Clique em "Launch instance"
 3. Aguarde a instância inicializar (status: running)
 
-*[Espaço para print: Instância EC2 rodando]*
+
 
 ### Passo 6.5: Anotar informações importantes
 
@@ -420,7 +436,7 @@ Você verá:
 [ec2-user@ip-172-31-xx-xx ~]$
 ```
 
-*[Espaço para print: Conexão SSH estabelecida]*
+
 
 ### Passo 7.2: Instalar Docker na EC2
 
@@ -444,6 +460,10 @@ sudo usermod -a -G docker ec2-user
 docker --version
 ```
 
+<img width="1169" height="114" alt="image" src="https://github.com/user-attachments/assets/0db52411-5134-4faf-868f-6b0544560479" />
+
+
+
 ### Passo 7.3: Fazer logout e login novamente
 
 ```bash
@@ -460,7 +480,7 @@ ssh -i meu-website-key.pem ec2-user@54.123.45.67
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123456789012.dkr.ecr.us-east-1.amazonaws.com
 ```
 
-*[Espaço para print: Login ECR na EC2]*
+
 
 ### Passo 7.5: Pull da imagem do ECR
 
@@ -474,7 +494,6 @@ v1.0: Pulling from meu-website
 Status: Downloaded newer image for 123456789012.dkr.ecr.us-east-1.amazonaws.com/meu-website:v1.0
 ```
 
-*[Espaço para print: Pull concluído]*
 
 ### Passo 7.6: Executar o container
 
@@ -496,7 +515,7 @@ docker ps
 docker logs meu-website-prod
 ```
 
-*[Espaço para print: Container rodando na EC2]*
+
 
 ---
 
@@ -508,7 +527,7 @@ docker logs meu-website-prod
 2. Digite o IP público da EC2: `http://54.123.45.67`
 3. Seu website deve aparecer! 🎉
 
-*[Espaço para print: Website funcionando na AWS]*
+
 
 ### Teste 2: Verificar logs na EC2
 
@@ -596,7 +615,7 @@ docker rmi 123456789012.dkr.ecr.us-east-1.amazonaws.com/meu-website:v1.0
 2. Selecione sua instância
 3. Actions → Instance State → Terminate
 
-*[Espaço para print: Confirmação de terminate]*
+
 
 ### Passo 3: Deletar imagem do ECR
 
