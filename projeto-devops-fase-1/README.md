@@ -1,25 +1,9 @@
 # 🚀 Laboratório DevOps - Projeto 1: Containerização com Docker e Deploy Manual na AWS
 
-## 📋 Índice
-1. [Visão Geral](#visão-geral)
-2. [Pré-requisitos](#pré-requisitos)
-3. [Fase 1: Preparação do Ambiente Local](#fase-1-preparação-do-ambiente-local)
-4. [Fase 2: Containerização com Docker](#fase-2-containerização-com-docker)
-5. [Fase 3: Teste Local do Container](#fase-3-teste-local-do-container)
-6. [Fase 4: Configuração do Amazon ECR](#fase-4-configuração-do-amazon-ecr)
-7. [Fase 5: Push da Imagem para o ECR](#fase-5-push-da-imagem-para-o-ecr)
-8. [Fase 6: Provisionamento da Instância EC2](#fase-6-provisionamento-da-instância-ec2)
-9. [Fase 7: Deploy na EC2](#fase-7-deploy-na-ec2)
-10. [Verificação e Testes](#verificação-e-testes)
-11. [Troubleshooting](#troubleshooting)
-12. [Limpeza de Recursos](#limpeza-de-recursos)
-
----
-
 ## 🎯 Visão Geral
 
 ### O que vamos construir?
-Neste laboratório, você aprenderá a containerizar um website estático (HTML, CSS e JavaScript) usando Docker e implantá-lo manualmente em uma instância EC2 na AWS, utilizando o Amazon ECR (Elastic Container Registry) para gerenciamento de imagens.
+Neste laboratório, vamos containerizar um website estático (HTML, CSS e JavaScript) usando Docker e implantá-lo manualmente em uma instância EC2 na AWS, utilizando o Amazon ECR (Elastic Container Registry) para gerenciamento de imagens.
 
 ### Por que isso é importante?
 - **Portabilidade**: Seu site funcionará da mesma forma em qualquer ambiente
