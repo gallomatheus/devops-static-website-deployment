@@ -26,7 +26,9 @@ Você deve ver a pasta `website/` com seus arquivos:
 ls -la website/
 ```
 
-*[Espaço para print: Estrutura de arquivos do projeto]*
+<img width="300" height="419" alt="image" src="https://github.com/user-attachments/assets/c46080bf-1e07-4d41-968e-cf08fd309039" />
+
+
 
 ### Passo 1.2: Testar o website localmente (opcional)
 
@@ -42,6 +44,7 @@ xdg-open website/index.html
 start website/index.html
 ```
 
+<img width="1853" height="1168" alt="image" src="https://github.com/user-attachments/assets/2cf2a51f-a032-4831-a99c-25f0ec659e27" />
 
 
 
