@@ -1,0 +1,58 @@
+Dockerfile exmeplo
+
+# Imagem base - Nginx Alpine (leve e eficiente)
+FROM nginx:alpine
+
+# Copia os arquivos do website para o diretório do Nginx
+COPY website/ /usr/share/nginx/html/
+
+# Expõe a porta 80 (documentação - não abre a porta realmente)
+EXPOSE 80
+
+# Comando padrão quando o container iniciar
+CMD ["nginx", "-g", "daemon off;"]
+
+
+-- COMANDOS DOCKER --
+docker ps -a
+docker images
+
+docker build -t meu-site:v1.0 . (o ponto é o diretório onde está o dockerfile)
+
+docker run -d -p 8080:80 NOME_IMAGEM (cria container com nome aleatório)
+docker run -d --name NOME_OU_ID -p 8080:80 NOME_IMAGEM (alterar o parâmetro name com nome objetivo) 
+
+docker start NOME_OU_ID
+docker stop NOME_OU_ID
+docker restart NOME_OU_ID
+docker logs -f NOME_OU_ID -- ver logs
+docker stats
+
+docker exec -it NOME_OU_ID sh -- entra no linux interno do container
+
+docker rm NOME_OU_ID -- remover container
+docker rm -f NOME_OU_ID -- remover container forçadamente
+docker rmi NOME_OU_ID -- remover imagens
+
+-- inicia automaticamente com a VM
+docker run -d \
+  --restart unless-stopped \
+  --name NOME_OU_ID \
+  -p 8080:80 \
+  meu-site
+
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 233053488097.dkr.ecr.us-east-2.amazonaws.com -- autenticar o docker na AWS
+
+docker tag NOME_OU_ID 233053488097.dkr.ecr.us-east-2.amazonaws.com/meu-website:v1.0 -- tagar a imagem
+
+docker push SEU_ID.dkr.ecr.us-east-1.amazonaws.com/meu-website -- enviar imagem para o ECR
+
+
+-- SSH na EC2 --
+ssh -i meu-website-key.pem ec2-user@18.219.149.94
+
+chmod 400 meu-website-key.pem
+
+docker pull 233053488097.dkr.ecr.us-east-2.amazonaws.com/meu-website
+
+docker run -d --name site-container -p 80:80 233053488097.dkr.ecr.us-east-2.amazonaws.com/meu-website:v1.0
