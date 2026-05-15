@@ -11,9 +11,6 @@ Neste laboratório, vamos containerizar um website estático (HTML, CSS e JavaSc
 - **Escalabilidade**: Base para futuras implementações mais complexas
 - **Padrão da Indústria**: Docker é amplamente utilizado no mercado
 
-### Tempo estimado: 2-3 horas
-
-
 ## 📦 Fase 1: Preparação do Ambiente Local
 
 ### Passo 1.1: Verificar estrutura do projeto
