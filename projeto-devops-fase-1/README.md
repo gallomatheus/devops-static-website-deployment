@@ -84,7 +84,8 @@ CMD ["nginx", "-g", "daemon off;"]
 - **EXPOSE**: Documenta qual porta o container usa
 - **CMD**: Define o comando padrão ao iniciar o container
 
-*[Espaço para print: Dockerfile criado no editor]*
+
+
 
 ### Passo 2.3: Construir a imagem Docker
 
@@ -113,7 +114,7 @@ Você verá a saída do processo de build:
  => naming to docker.io/library/meu-website:v1.0
 ```
 
-*[Espaço para print: Processo de build do Docker]*
+
 
 ### Passo 2.4: Verificar a imagem criada
 
@@ -127,7 +128,9 @@ REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
 meu-website    v1.0      abc123def456   30 seconds ago   23.5MB
 ```
 
-*[Espaço para print: Lista de imagens Docker]*
+<img width="841" height="245" alt="image" src="https://github.com/user-attachments/assets/9497bfb2-0597-40b3-acbb-ad5a50aad196" />
+
+
 
 ---
 
@@ -158,7 +161,7 @@ CONTAINER ID   IMAGE              COMMAND                  CREATED         STATU
 xyz789abc123   meu-website:v1.0   "nginx -g 'daemon..."   10 seconds ago  Up 9 seconds   0.0.0.0:8080->80/tcp   meu-website-container
 ```
 
-*[Espaço para print: Container em execução]*
+
 
 ### Passo 3.3: Testar no navegador
 
@@ -167,9 +170,11 @@ Abra seu navegador e acesse:
 http://localhost:8080
 ```
 
-Você deve ver seu website funcionando! 🎉
 
-*[Espaço para print: Website rodando via Docker no localhost:8080]*
+<img width="1636" height="893" alt="image" src="https://github.com/user-attachments/assets/1a0b119c-1b36-43f4-ab38-b93b0790177a" />
+
+
+
 
 ### Passo 3.4: Verificar logs do container (opcional)
 
