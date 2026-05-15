@@ -548,6 +548,9 @@ docker logs meu-website-prod
 <img width="1854" height="1201" alt="image" src="https://github.com/user-attachments/assets/ce7da0c0-929e-4873-962c-bf97ab6c38a4" />
 
 
+<img width="1854" height="1167" alt="image" src="https://github.com/user-attachments/assets/cd092427-d836-433b-a142-56d8f9dfc8d7" />
+
+
 
 ### Teste 2: Verificar logs na EC2
 
