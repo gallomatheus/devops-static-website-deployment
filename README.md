@@ -22,9 +22,8 @@
 
 ### 1. Docker Desktop
 
-Windows/Mac: Baixe em docker.com/products/docker-desktop
+Instale via terminal:
 
-Linux: Instale via terminal:
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
 ```
