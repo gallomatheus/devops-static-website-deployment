@@ -5,6 +5,19 @@
 ### O que vamos construir?
 Neste etapa do projeto, temos como objetivo escrever toda a infraestrutura que precisamos por código utilizando o Terraform, e aplicando em produção.
 
+### Conhecimentos e práticas:
+✅ Criar e configurar uma instância EC2 com Terraform
+
+✅ Provisionar um ECR para armazenar imagens Docker
+
+✅ Criar Security Groups com regras de entrada e saída
+
+✅ Atrelar um IAM Profile à EC2 de forma segura
+
+✅ Substituir cliques manuais por Infraestrutura como Código (IaC)
+
+✅ Preparar o terreno para a automação completa com CI/CD usando GitHub Actions
+
 
 ### Passo 1: Construir os arquivos do Terraform
 
@@ -13,7 +26,7 @@ Neste etapa do projeto, temos como objetivo escrever toda a infraestrutura que p
 - ec2.tf
 - ecr-tf
 
-### No VSCode, criamos 4 novos arquivos com extensão .tf:
+### No VSCode, criaremos 4 novos arquivos com extensão .tf:
 
 provider.tf
 ```bash
@@ -104,8 +117,12 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_outbound" {
 ```
 
 
+### Passo 2: Criar um bucket S3 na AWS.
 
+Nome: terraform-state-matheusg
+Demais campos default, bloqueando somente acesso de outros usuários.
 
+<img width="1536" height="749" alt="image" src="https://github.com/user-attachments/assets/c7d87ccf-5c5a-48b0-a5a5-2f47df5460f0" />
 
 
 
