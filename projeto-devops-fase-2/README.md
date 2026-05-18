@@ -28,14 +28,14 @@ Neste etapa do projeto, temos como objetivo escrever toda a infraestrutura que p
 
 ### No VSCode, criaremos 4 novos arquivos com extensão .tf:
 
-provider.tf
+#### provider.tf 
 ```bash
 provider "aws" {
   region = "us-east-2"
 }
 ```
 
-backend.tf
+#### backend.tf
 ```bash
 # state.tf
 terraform {
@@ -48,7 +48,7 @@ terraform {
 }
 ```
 
-ec2.tf
+#### ec2.tf
 ```bash
 #ECR Repository
 resource "aws_ecr_repository" "ecr_site" {
@@ -57,7 +57,7 @@ resource "aws_ecr_repository" "ecr_site" {
 }
 ```
 
-ecr-tf.tf
+#### ecr-tf.tf
 ```bash
 resource "aws_instance" "website_server" {
   ami                    = "ami-0b016c703b95ecbe4" #Amazon Linux 2 AMI
