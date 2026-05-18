@@ -1,4 +1,4 @@
-# 🚀 Laboratório DevOps - Projeto 2: Automatizando Infraestrutura com Terraform + AWS
+# 🚀 Laboratório DevOps - Projeto 2: Automatizando a Infraestrutura AWS com Terraform
 
 ## 🎯 Visão Geral
 
@@ -18,6 +18,42 @@ Neste etapa do projeto, temos como objetivo escrever toda a infraestrutura que p
 
 ✅ Preparar o terreno para a automação completa com CI/CD usando GitHub Actions
 
+
+### Passo 1: Instalar o Terraform no ambiente
+1. Atualizar sistema
+```bash
+sudo apt update
+```
+
+2. Instalar dependências
+```bash
+sudo apt install -y gnupg software-properties-common curl
+```
+
+3. Adicionar chave HashiCorp
+```bash
+curl -fsSL https://apt.releases.hashicorp.com/gpg | \
+sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+```
+
+4. Adicionar repositório
+```bash
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+https://apt.releases.hashicorp.com \
+$(lsb_release -cs) main" | \
+sudo tee /etc/apt/sources.list.d/hashicorp.list
+```
+
+5. Instalar Terraform
+```bash
+sudo apt update
+sudo apt install terraform -y
+```
+
+6. Verificar instalação
+```bash
+terraform -version
+```
 
 ### Passo 1: Construir os arquivos do Terraform
 
@@ -86,7 +122,7 @@ resource "aws_security_group" "website_sg" {
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
   security_group_id = aws_security_group.website_sg.id
-  cidr_ipv4         = "seu-ip/32" # alterar ip
+  cidr_ipv4         = "seu-ip/32" # DIGITAR IPV4
   from_port         = 22
   ip_protocol       = "tcp"
   to_port           = 22
@@ -115,6 +151,12 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_outbound" {
   ip_protocol = -1
 }
 ```
+
+
+### Em caso de dúvidas consultar a documentação do Terraform
+
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+
 
 
 ### Passo 2: Criar um bucket S3 na AWS.
