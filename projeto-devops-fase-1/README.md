@@ -3,13 +3,7 @@
 ## 🎯 Visão Geral
 
 ### O que vamos construir?
-Neste laboratório, vamos containerizar um website estático (HTML, CSS e JavaScript) usando Docker e implantá-lo manualmente em uma instância EC2 na AWS, utilizando o Amazon ECR (Elastic Container Registry) para gerenciamento de imagens.
-
-### Por que isso é importante?
-- **Portabilidade**: Seu site funcionará da mesma forma em qualquer ambiente
-- **Isolamento**: Elimina problemas de "funciona na minha máquina"
-- **Escalabilidade**: Base para futuras implementações mais complexas
-- **Padrão da Indústria**: Docker é amplamente utilizado no mercado
+Neste laboratório, o objetivo é containerizar um website estático (HTML, CSS e JavaScript) usando Docker e implantá-lo manualmente em uma instância EC2 na AWS, utilizando o Amazon ECR (Elastic Container Registry) para gerenciamento de imagens.
 
 ## 📦 Fase 1: Preparação do Ambiente Local
 
