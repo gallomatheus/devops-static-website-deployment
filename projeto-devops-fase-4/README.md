@@ -5,11 +5,6 @@ Este projeto implementa uma pipeline CI/CD utilizando GitHub Actions para automa
 
 Essa abordagem promove escalabilidade, com o uso de Infrastructure as Code (IaC) implícito na configuração da pipeline, e reliability através de dependências entre jobs para evitar deploys falhos. Para mais detalhes sobre GitHub Actions, consulte a [documentação oficial](https://docs.github.com/en/actions).
 
-## Assista ao Tutorial em Vídeo
-Para complementar esta documentação, elaborei um vídeo completo que explica passo a passo a implementação da pipeline CI/CD, desde a configuração inicial até o deploy na instância EC2, com foco em melhores práticas de DevOps, como uso de credenciais temporárias via OIDC e tagging dinâmico de imagens Docker.
-
-Esse vídeo faz parte da série "DevOps na Prática", e corresponde à parte 4 de uma playlist abrangente, que cobre todo o processo desde os conceitos iniciais até as otimizações avançadas, incluindo integração com ferramentas como Terraform e SonarQube. Acesse a playlist completa aqui: [Playlist DevOps na Prática](https://youtube.com/playlist?list=PLOCRt8ucq6xNSMUvfTxnk-M4mk9Etwpy6&si=LOoW5N9Xc6-QViKN). Recomendo assistir para uma visão prática e visual.
-
 ## Pré-requisitos
 
 - Conta AWS com permissões para ECR e EC2.
