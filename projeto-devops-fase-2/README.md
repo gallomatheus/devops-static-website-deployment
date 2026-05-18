@@ -214,6 +214,11 @@ ssh -i chave-site-prod.pem ec2-user@IP_DA_MAQUINA
 <img width="1101" height="298" alt="image" src="https://github.com/user-attachments/assets/003ba4b5-eaf1-480e-a386-8d8d0d037c2c" />
 
 
+#### Para deletar todos os recursos criados pelo Terraform na AWS, use o comando:
+```bash
+terraform destroy
+```
+<img width="1021" height="581" alt="image" src="https://github.com/user-attachments/assets/faa40f16-44c8-4cdf-b819-2b4ffab81f14" />
 
 
 
