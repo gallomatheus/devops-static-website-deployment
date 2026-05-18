@@ -1,4 +1,4 @@
-# Projeto de deploy de aplicação HTML estática utilizando Docker, Nginx e AWS EC2 com armazenamento da imagem no Amazon ECR.
+# Projeto para prática DevOps com deploy de aplicação HTML estática utilizando Docker, Nginx e AWS EC2 com armazenamento da imagem no Amazon ECR, Terraform, CI/CD.
 
 ## 📋 Tecnologias utilizadas
 - Oracle VirtualBox
