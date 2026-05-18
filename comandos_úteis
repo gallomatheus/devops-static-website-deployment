@@ -41,18 +41,22 @@ docker run -d \
   -p 8080:80 \
   meu-site
 
-aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 233053488097.dkr.ecr.us-east-2.amazonaws.com -- autenticar o docker na AWS
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin SEU_ID_AWS.dkr.ecr.us-east-2.amazonaws.com -- autenticar o docker na AWS
 
-docker tag NOME_OU_ID 233053488097.dkr.ecr.us-east-2.amazonaws.com/meu-website:v1.0 -- tagar a imagem
+docker tag NOME_OU_ID SEU_ID_AWS.dkr.ecr.us-east-2.amazonaws.com/meu-website:v1.0 -- tagar a imagem
 
-docker push SEU_ID.dkr.ecr.us-east-1.amazonaws.com/meu-website -- enviar imagem para o ECR
+docker push SEU_ID_AWS.dkr.ecr.us-east-1.amazonaws.com/meu-website -- enviar imagem para o ECR
 
 
 -- SSH na EC2 --
-ssh -i meu-website-key.pem ec2-user@18.219.149.94
+ssh -i meu-website-key.pem ec2-user@IPV4_PUBLICO
 
 chmod 400 meu-website-key.pem
 
-docker pull 233053488097.dkr.ecr.us-east-2.amazonaws.com/meu-website
+docker pull SEU_ID_AWS.dkr.ecr.us-east-2.amazonaws.com/meu-website
 
-docker run -d --name site-container -p 80:80 233053488097.dkr.ecr.us-east-2.amazonaws.com/meu-website:v1.0
+docker run -d --name site-container -p 80:80 SEU_ID_AWS.dkr.ecr.us-east-2.amazonaws.com/meu-website:v1.0
+
+
+
+
