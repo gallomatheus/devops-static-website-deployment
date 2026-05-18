@@ -55,7 +55,7 @@ sudo apt install terraform -y
 terraform -version
 ```
 
-### Passo 1: Construir os arquivos do Terraform
+### Passo 2: Construir os arquivos do Terraform
 
 - provider.tf
 - backend.tf
@@ -159,7 +159,7 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 
 
 
-### Passo 2: Criar um bucket S3 na AWS.
+### Passo 3: Criar um bucket S3 na AWS.
 
 Nome: terraform-state-matheusg
 Demais campos default, bloqueando somente acesso de outros usuários.
@@ -167,7 +167,51 @@ Demais campos default, bloqueando somente acesso de outros usuários.
 <img width="1536" height="749" alt="image" src="https://github.com/user-attachments/assets/c7d87ccf-5c5a-48b0-a5a5-2f47df5460f0" />
 
 
+### Passo 4: Inicializar o Terraform a partir do diretório em que estão os arquivos e seguir com os comandos.
 
+<img width="1065" height="658" alt="image" src="https://github.com/user-attachments/assets/ff7225b4-abf8-404b-a794-f6966732506d" />
+
+#### Comando para formatar e identar os arquivos criados:
+```bash
+terraform fmt
+```
+
+#### Comando para validar se há erros nos arquivos criados:
+```bash
+terraform validate
+```
+
+#### Comando para o Terraform "buildar" a configuração parametrizada:
+```bash
+terraform plan
+```
+<img width="1460" height="177" alt="image" src="https://github.com/user-attachments/assets/ddbd628b-a5cb-4463-9b82-13a32e22992c" />
+
+
+#### Logo após verificarmos todos os parâmetros, podemos aplicar essas configurações e o Terraform irá criar a instância:
+```bash
+terraform apply
+```
+
+<img width="1114" height="538" alt="image" src="https://github.com/user-attachments/assets/d3cd8415-2778-4fc3-85d5-ffc2ec2b2c63" />
+
+
+#### Pronto! O Terraform criou a infraestrutura que codamos via código:
+
+<img width="1271" height="690" alt="image" src="https://github.com/user-attachments/assets/b74bbf07-76e7-4399-b888-87c33e110251" />
+
+
+#### Para verificar se a instância EC2 está acessível use o comando:
+```bash
+chmod 400 chave-site-prod.pem
+```
+
+```bash
+ssh -i chave-site-prod.pem ec2-user@IP_DA_MAQUINA
+```
+
+
+<img width="1101" height="298" alt="image" src="https://github.com/user-attachments/assets/003ba4b5-eaf1-480e-a386-8d8d0d037c2c" />
 
 
 
